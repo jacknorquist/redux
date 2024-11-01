@@ -10,6 +10,7 @@ interface Props {
   readonly children: ReactNode;
 }
 
+
 export const StoreProvider = ({ children }: Props) => {
   const storeRef = useRef<AppStore | null>(null);
 
