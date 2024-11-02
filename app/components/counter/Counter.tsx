@@ -12,6 +12,8 @@ import {
   selectStatus,
 } from "@/lib/features/counter/counterSlice";
 
+import {setGravity, setTemperature, setStiffness} from "@/lib/features/physics/physicsSlice"
+
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import styles from "./Counter.module.css";
 
@@ -25,57 +27,10 @@ export const Counter = () => {
 
   return (
     <div>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
-        <span aria-label="Count" className={styles.value}>
-          {count}
-        </span>
-        <button
-          className={styles.button}
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
-      </div>
-      <div className={styles.row}>
-        <input
-          className={styles.textbox}
-          aria-label="Set increment amount"
-          value={incrementAmount}
-          type="number"
-          onChange={(e) => {
-            setIncrementAmount(e.target.value);
-          }}
-        />
-        <button
-          className={styles.button}
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
-        >
-          Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
-          disabled={status !== "idle"}
-          onClick={() => dispatch(incrementAsync(incrementValue))}
-        >
-            Count Down
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            dispatch(incrementIfOdd(incrementValue));
-          }}
-        >
-          Add If Odd
-        </button>
-      </div>
+      <button onClick={dispatch(setGravity(1))}></button>
+      <button onClick={dispatch(setTemperature(1))}></button>
+      <button onClick={dispatch(setStiffness(1))}></button>
+
     </div>
   );
 };
