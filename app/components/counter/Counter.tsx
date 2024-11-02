@@ -25,6 +25,9 @@ export const Counter = () => {
 
   const incrementValue = Number(incrementAmount) || 0;
 
+
+  //use dispatch with use effect for a slider to change the gravity and tempurature and stiffeness
+
   return (
     <div>
       <button onClick={dispatch(setGravity(1))}></button>
