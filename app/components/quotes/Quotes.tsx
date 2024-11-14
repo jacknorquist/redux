@@ -27,6 +27,8 @@ export const Quotes = () => {
     );
   }
 
+
+
   if (isSuccess) {
     return (
       <div className={styles.container}>
